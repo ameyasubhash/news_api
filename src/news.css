@@ -1,0 +1,138 @@
+/* Apply a basic reset to body margins and paddings */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif; /* You can choose a different font here */
+  background-color: #f4f4f4; /* Light grey background for the overall page */
+}
+
+/* Header styling */
+.App-header {
+  background-color: rgba(17, 39, 83, 0.85); /* A nice dark slate color */
+  padding: 20px 40px; /* Padding for some breathing room */
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
+  position: sticky;
+  top: 0;
+  transition: top 0.3s; /* Keeps the header at the top of the page when scrolling */
+  z-index: 1000; /* Ensures the header stays above other content */
+}
+
+.header-hidden {
+    top: -100px; /* Adjust as needed to fully hide the header */
+  }
+
+/* Header title styling */
+.App-header h1 {
+  color: #fff; /* White text for the title */
+  font-size: 2rem; /* 32px font size */
+  font-weight: 600; /* Semi-bold font weight */
+  text-transform: uppercase; /* Uppercase letters for the title */
+  letter-spacing: 1.5px; /* Spacing between letters for better readability */
+  margin: 0; /* Removes default margin */
+}
+
+.top-button {
+    display: none; /* Start as hidden */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* ... */
+  }
+  
+  /* Add this to only show the button after scrolling down a bit */
+  .App .top-button.show {
+    display: block; /* Show button */
+  }
+/* Main news container */
+.news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Individual news article */
+.article {
+    background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, border-color 0.2s; /* Add border-color to the transition */
+  border: 2px solid transparent;  /* Maximum width for larger screens */
+}
+
+.article:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  border-color: #007bff;
+}
+
+/* Article title */
+.article h2 {
+  font-size: 24px; /* Larger text for the title */
+  color: #333; /* Dark grey color for the title text */
+  margin-bottom: 10px;
+}
+
+/* Article description */
+.article p {
+  color: #666; /* Medium grey color for the description text */
+  line-height: 1.6; /* More space between lines */
+}
+
+/* Article link */
+.article a {
+  color: #1e90ff; /* Slightly bolder blue for the links */
+  text-decoration: none; /* No underline on the links */
+  font-weight: 600; /* Make the link text slightly bolder */
+}
+
+.article a:hover {
+  text-decoration: underline; /* Underline on hover for better UX */
+}
+
+/* Loading and Error messages */
+.loading,
+.error {
+  color: #ff6b6b; /* Red color for error messages */
+  font-size: 18px; /* Larger font size for visibility */
+}
+/* Individual news article */
+.article {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s; /* Animation on hover */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the content */
+}
+
+.article img {
+  max-width: 100%; /* ensures the image is not wider than the article */
+  max-height: 200px; /* set a maximum height for the images */
+  object-fit: cover; /* ensures the image covers the area, might crop */
+  width: auto; /* maintain the original aspect ratio */
+  height: auto; /* maintain the original aspect ratio */
+  border-radius: 4px; /* match the article's border radius */
+  margin-bottom: 20px; /* adds some space between the image and the title */
+}
+
+/* Main news container */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  gap: 20px; /* This sets the space between grid items */
+  padding: 20px;
+  max-width: 1200px; /* Maximum width of the grid */
+  margin: auto; /* Center the grid horizontally */
+}
+
+@media (max-width: 768px) {
+  .news-container {
+    grid-template-columns: 1fr; /* Stacks articles into one column on small screens */
+  }
+}
